@@ -4,6 +4,7 @@ import com.pankx.bean.Department;
 import com.pankx.bean.Employee;
 import com.pankx.dao.DepartmentMapper;
 import com.pankx.dao.EmployeeMapper;
+import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.UUID;
 
 /**
  * 测试dao层的工作
@@ -27,6 +30,9 @@ public class TestMapper {
     DepartmentMapper departmentMapper;
     @Autowired
     EmployeeMapper employeeMapper;
+    @Autowired
+    SqlSession sqlSession;
+
     @Test
     public void testDepartmentMapper(){
 //        departmentMapper.selectByPrimaryKey(2);
@@ -36,9 +42,16 @@ public class TestMapper {
 //        departmentMapper.insertSelective(new Department(null,"行政部"));
 
         //测试员工的插入
-        employeeMapper.insertSelective(new Employee(null,"pankx","m","764670547@qq.com",18));
+//        employeeMapper.insertSelective(new Employee(null,"pankx","m","764670547@qq.com",18));
+        //批量插入多个员工可以使用可指操作的sqlSession
 
-
+        EmployeeMapper employee = sqlSession.getMapper(EmployeeMapper.class);
+        //批量插入1000条数据
+        for (int i=0;i<1000;i++){
+            String uuid = UUID.randomUUID().toString().substring(0,5);
+            employee.insertSelective(new Employee(null,"pankx"+uuid,"M",uuid+"@qq.com",18));
+        }
+        System.out.println("批量完成");
     }
 
 }
