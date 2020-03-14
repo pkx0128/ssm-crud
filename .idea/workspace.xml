@@ -7,11 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/mybatismapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/RunMyBatisGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/RunMyBatisGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/mybatismapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +50,7 @@
       <list>
         <option value="Jsp File" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,6 +94,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/static" />
@@ -101,7 +112,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestMapper.testDepartmentMapper">
+    <configuration name="RunMyBatisGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pankx.test.RunMyBatisGenerator" />
+      <module name="ssmcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pankx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMapper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestMapper" />
+      <module name="ssmcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pankx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMapper.testDepartmentMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssmcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pankx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pankx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestMapper" />
+      <option name="METHOD_NAME" value="testDepartmentMapper" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ssm" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -174,6 +227,13 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestMapper.testDepartmentMapper" />
+        <item itemvalue="Application.TestMapper" />
+        <item itemvalue="Application.RunMyBatisGenerator" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -187,7 +247,9 @@
       <updated>1584001746319</updated>
       <workItem from="1584001748447" duration="672000" />
       <workItem from="1584007142366" duration="12018000" />
-      <workItem from="1584069059566" duration="4999000" />
+      <workItem from="1584069059566" duration="12838000" />
+      <workItem from="1584156365814" duration="11940000" />
+      <workItem from="1584188667764" duration="4409000" />
     </task>
     <servers />
   </component>
