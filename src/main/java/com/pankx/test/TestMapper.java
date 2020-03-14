@@ -31,9 +31,13 @@ public class TestMapper {
     public void testDepartmentMapper(){
 //        departmentMapper.selectByPrimaryKey(2);
 //        System.out.println(departmentMapper.selectByPrimaryKey(7).getDeptName());
-        //测试插入
-        departmentMapper.insertSelective(new Department(null,"开发部"));
-        departmentMapper.insertSelective(new Department(null,"行政部"));
+        //测试部门的插入
+//        departmentMapper.insertSelective(new Department(null,"开发部"));
+//        departmentMapper.insertSelective(new Department(null,"行政部"));
+
+        //测试员工的插入
+        employeeMapper.insertSelective(new Employee(null,"pankx","m","764670547@qq.com",18));
+
 
     }
 

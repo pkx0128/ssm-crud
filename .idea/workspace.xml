@@ -7,20 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/RunMyBatisGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/RunMyBatisGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/mybatismapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +237,7 @@
       <workItem from="1584007142366" duration="12018000" />
       <workItem from="1584069059566" duration="12838000" />
       <workItem from="1584156365814" duration="11940000" />
-      <workItem from="1584188667764" duration="4409000" />
+      <workItem from="1584188667764" duration="5640000" />
     </task>
     <servers />
   </component>
