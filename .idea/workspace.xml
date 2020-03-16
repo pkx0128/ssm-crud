@@ -7,10 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/EmployController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +241,8 @@
       <workItem from="1584007142366" duration="12018000" />
       <workItem from="1584069059566" duration="12838000" />
       <workItem from="1584156365814" duration="11940000" />
-      <workItem from="1584188667764" duration="9104000" />
+      <workItem from="1584188667764" duration="9537000" />
+      <workItem from="1584242892607" duration="1961000" />
     </task>
     <servers />
   </component>
