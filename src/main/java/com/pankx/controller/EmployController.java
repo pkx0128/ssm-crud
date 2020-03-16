@@ -15,18 +15,17 @@ import java.util.List;
 /**
  * 员工列表处理器
  */
-@RequestMapping("/empls")
+@RequestMapping("/emps")
 @Controller
 public class EmployController {
     //注入EmployeeService
     @Autowired
     private EmployeeService employeeService;
-
     /**
      * 查询所有数据，
      * @return
      */
-    @RequestMapping("/emps")
+    @RequestMapping("/getemps")
     public String getEmps(@RequestParam(value = "pn",defaultValue = "1") int pn, Model model){
         //开始分页，页码编号pn，页面的数据条数为5
         PageHelper.startPage(pn,5);
@@ -38,5 +37,9 @@ public class EmployController {
         model.addAttribute("pageInfo",pageInfo);
         return "list";
     }
-
+    @RequestMapping("/testmvc")
+    public String testmvc(){
+        System.out.print("testmvc");
+        return "list";
+    }
 }

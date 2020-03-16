@@ -21,7 +21,7 @@
     </context:component-scan>
 
 <!--    引入外部properties配置文件-->
-    <context:property-placeholder location="classpath:mysqlconfi.properties"/>
+    <context:property-placeholder location="classpath:mysqlconfig.properties"/>
     <!--配置连接池-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driverClass}"/>
@@ -35,9 +35,9 @@
         <!--数据源-->
         <property name="dataSource" ref="dataSource"/>
         <!--指定mybatis的全局配置文件-->
-<!--        <property name="configLocation" value="classpath:mybatisconfig.xml"/>-->
+        <property name="configLocation" value="classpath:mybatisconfig.xml"/>
         <!--指定Mapper配置文件-->
-        <property name="mapperLocations" value="mapper/*.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
 <!--    配置sqlSession-->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

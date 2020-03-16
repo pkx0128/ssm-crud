@@ -7,11 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/dao/DepartmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/dao/DepartmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysqlconfig.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatisconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mysqlconfi.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -103,7 +112,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestMapper.testDepartmentMapper">
+  <component name="RunManager" selected="Tomcat Server.ssm">
     <configuration name="RunMyBatisGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pankx.test.RunMyBatisGenerator" />
       <module name="ssmcrud" />
@@ -126,6 +135,38 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestContoller.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssmcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pankx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pankx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestContoller" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestContoller.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssmcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pankx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pankx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestContoller" />
+      <option name="METHOD_NAME" value="testPage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,6 +261,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestContoller.testPage" />
+        <item itemvalue="JUnit.TestContoller.test" />
         <item itemvalue="JUnit.TestMapper.testDepartmentMapper" />
         <item itemvalue="Application.TestMapper" />
         <item itemvalue="Application.RunMyBatisGenerator" />
@@ -241,7 +284,8 @@
       <workItem from="1584069059566" duration="12838000" />
       <workItem from="1584156365814" duration="11940000" />
       <workItem from="1584188667764" duration="9537000" />
-      <workItem from="1584242892607" duration="4653000" />
+      <workItem from="1584242892607" duration="11682000" />
+      <workItem from="1584345798016" duration="6820000" />
     </task>
     <servers />
   </component>
