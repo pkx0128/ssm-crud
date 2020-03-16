@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/EmployController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,9 +39,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -242,7 +241,7 @@
       <workItem from="1584069059566" duration="12838000" />
       <workItem from="1584156365814" duration="11940000" />
       <workItem from="1584188667764" duration="9537000" />
-      <workItem from="1584242892607" duration="1961000" />
+      <workItem from="1584242892607" duration="4653000" />
     </task>
     <servers />
   </component>
