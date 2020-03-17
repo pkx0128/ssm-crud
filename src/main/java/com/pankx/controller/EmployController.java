@@ -33,13 +33,8 @@ public class EmployController {
         List<Employee> list = employeeService.getAll();
         //使用PageInfo封查询结果,并设置连续显示页面的导航页数
         PageInfo pageInfo = new PageInfo(list,5);
-        //存入
+        //存入请求域
         model.addAttribute("pageInfo",pageInfo);
-        return "list";
-    }
-    @RequestMapping("/testmvc")
-    public String testmvc(){
-        System.out.print("testmvc");
         return "list";
     }
 }

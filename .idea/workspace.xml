@@ -7,18 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/dao/DepartmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/dao/DepartmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/dao/EmployeeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mysqlconfi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysqlconfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatisconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mysqlconfi.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/classes/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-crud/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/index.jsp" afterDir="false" />
     </list>
@@ -49,8 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -112,7 +112,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.ssm">
+  <component name="RunManager" selected="JUnit.TestContoller.testPage">
     <configuration name="RunMyBatisGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pankx.test.RunMyBatisGenerator" />
       <module name="ssmcrud" />
@@ -285,7 +285,8 @@
       <workItem from="1584156365814" duration="11940000" />
       <workItem from="1584188667764" duration="9537000" />
       <workItem from="1584242892607" duration="11682000" />
-      <workItem from="1584345798016" duration="6820000" />
+      <workItem from="1584345798016" duration="11953000" />
+      <workItem from="1584456351961" duration="5470000" />
     </task>
     <servers />
   </component>
