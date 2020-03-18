@@ -7,20 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emplist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/classes/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/success.jsp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +80,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.github.izhangzhihao.rainbow.brackets.settings.RainbowConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -112,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestContoller.testPage">
+  <component name="RunManager" selected="Tomcat Server.ssm">
     <configuration name="RunMyBatisGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pankx.test.RunMyBatisGenerator" />
       <module name="ssmcrud" />
@@ -188,7 +182,7 @@
       </method>
     </configuration>
     <configuration name="ssm" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="ssmcrud:war exploded">
           <settings>
@@ -259,6 +253,14 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.RunMyBatisGenerator" />
+      <item itemvalue="Application.TestMapper" />
+      <item itemvalue="JUnit.TestContoller.test" />
+      <item itemvalue="JUnit.TestContoller.testPage" />
+      <item itemvalue="JUnit.TestMapper.testDepartmentMapper" />
+      <item itemvalue="Tomcat Server.ssm" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestContoller.testPage" />
@@ -286,7 +288,16 @@
       <workItem from="1584188667764" duration="9537000" />
       <workItem from="1584242892607" duration="11682000" />
       <workItem from="1584345798016" duration="11953000" />
-      <workItem from="1584456351961" duration="5470000" />
+      <workItem from="1584456351961" duration="5819000" />
+      <workItem from="1584503114023" duration="6566000" />
+      <workItem from="1584514874892" duration="175000" />
+      <workItem from="1584515097105" duration="343000" />
+      <workItem from="1584515591141" duration="540000" />
+      <workItem from="1584516170111" duration="5363000" />
+      <workItem from="1584522995935" duration="714000" />
+      <workItem from="1584523753384" duration="443000" />
+      <workItem from="1584524418835" duration="47000" />
+      <workItem from="1584524637452" duration="8577000" />
     </task>
     <servers />
   </component>

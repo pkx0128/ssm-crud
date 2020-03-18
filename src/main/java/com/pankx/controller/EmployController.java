@@ -35,6 +35,6 @@ public class EmployController {
         PageInfo pageInfo = new PageInfo(list,5);
         //存入请求域
         model.addAttribute("pageInfo",pageInfo);
-        return "list";
+        return "emplist";
     }
 }

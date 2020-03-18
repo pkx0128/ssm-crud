@@ -47,7 +47,7 @@ public class TestContoller {
     @Test
     public void testPage() throws Exception {
         //模拟get请求获取得结果
-        MvcResult mvcResult =  mockMvc.perform(MockMvcRequestBuilders.get("/emps/getemps").param("pn","15")).andReturn();
+        MvcResult mvcResult =  mockMvc.perform(MockMvcRequestBuilders.get("/emps/getemps").param("pn","1")).andReturn();
         //此时请求域中会有一个pageInfo,可以取出pageInfo验证
         PageInfo page = (PageInfo) mvcResult.getRequest().getAttribute("pageInfo");
         //输出page的数据,如果有数据输出说明控制器类可能正常工作
