@@ -7,14 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emplist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/test/TestContoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/success.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/emplist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/WEB-INF/views/emplist.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,19 +103,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.ssm">
-    <configuration name="RunMyBatisGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pankx.test.RunMyBatisGenerator" />
-      <module name="ssmcrud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pankx.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestMapper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestMapper" />
       <module name="ssmcrud" />
@@ -160,6 +143,22 @@
       <option name="PACKAGE_NAME" value="com.pankx.test" />
       <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestContoller" />
       <option name="METHOD_NAME" value="testPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestContoller.testgetEmpsByJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssmcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pankx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pankx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.pankx.test.TestContoller" />
+      <option name="METHOD_NAME" value="testgetEmpsByJson" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -254,20 +253,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RunMyBatisGenerator" />
       <item itemvalue="Application.TestMapper" />
       <item itemvalue="JUnit.TestContoller.test" />
       <item itemvalue="JUnit.TestContoller.testPage" />
       <item itemvalue="JUnit.TestMapper.testDepartmentMapper" />
       <item itemvalue="Tomcat Server.ssm" />
+      <item itemvalue="JUnit.TestContoller.testgetEmpsByJson" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestContoller.testgetEmpsByJson" />
         <item itemvalue="JUnit.TestContoller.testPage" />
         <item itemvalue="JUnit.TestContoller.test" />
         <item itemvalue="JUnit.TestMapper.testDepartmentMapper" />
         <item itemvalue="Application.TestMapper" />
-        <item itemvalue="Application.RunMyBatisGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +296,7 @@
       <workItem from="1584522995935" duration="714000" />
       <workItem from="1584523753384" duration="443000" />
       <workItem from="1584524418835" duration="47000" />
-      <workItem from="1584524637452" duration="8577000" />
+      <workItem from="1584524637452" duration="14080000" />
     </task>
     <servers />
   </component>

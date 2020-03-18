@@ -78,11 +78,11 @@
             <div class="col-md-6">
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
-                        <%--当当前页为第一页时,设置首页按钮不可用--%>
+                        <%--当当前页为第一页时,设置首页按钮不可见--%>
                         <c:if test="${pageInfo.hasPreviousPage}">
                             <li><a href="${APP_PATH}/emps/getemps?pn=1">首页</a></li>
                         </c:if>
-                        <%--当当前页为第一页时设置上一页按钮不可用--%>
+                        <%--当当前页为第一页时设置上一页按钮不可见--%>
                         <c:if test="${pageInfo.hasPreviousPage}">
                             <li>
                                 <a href="${APP_PATH}/emps/getemps?pn=${pageInfo.pageNum-1}" aria-label="Previous">
@@ -100,12 +100,7 @@
                                 <li><a href="${APP_PATH}/emps/getemps?pn=${pageN}">${pageN}</a> </li>
                             </c:if>
                         </c:forEach>
-<%--                        <li><a href="#">1</a></li>--%>
-<%--                        <li><a href="#">2</a></li>--%>
-<%--                        <li><a href="#">3</a></li>--%>
-<%--                        <li><a href="#">4</a></li>--%>
-<%--                        <li><a href="#">5</a></li>--%>
-                        <%--当当前页为最后一页时设置下一页按钮不可用--%>
+                        <%--当当前页为最后一页时设置下一页按钮不可见--%>
                         <c:if test="${pageInfo.hasNextPage}">
                             <li>
                                 <a href="${APP_PATH}/emps/getemps?pn=${pageInfo.pageNum + 1}" aria-label="Next">
@@ -113,7 +108,7 @@
                                 </a>
                             </li>
                         </c:if>
-                        <%--当当前页为最后一页时设置尾页按钮不可用--%>
+                        <%--当当前页为最后一页时设置尾页按钮不可见--%>
                         <c:if test="${pageInfo.hasNextPage}">
                             <li><a href="${APP_PATH}/emps/getemps?pn=${pageInfo.pages}">尾页</a></li>
                         </c:if>
