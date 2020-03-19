@@ -10,6 +10,9 @@
    <package name="com.pankx.bean"/>
   </typeAliases>
   <plugins>
-   <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+   <plugin interceptor="com.github.pagehelper.PageInterceptor">
+<!--    添加分布合理化，防止查询错误页码-->
+    <property name="reasonable" value="true"/>
+   </plugin>
   </plugins>
 </configuration>

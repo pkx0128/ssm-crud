@@ -70,6 +70,7 @@
                 data:"pn="+ pn,
                 type:"GET",
                 success:function(data){
+                    //显示员工列表信息
                     emp_table(data);
                     //显示分页数据
                     emp_pageMsg(data);
