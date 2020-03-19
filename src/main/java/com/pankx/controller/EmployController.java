@@ -24,6 +24,11 @@ public class EmployController {
     @Autowired
     private EmployeeService employeeService;
 
+    /**
+     * 实现ajax数据返回
+     * @param pn
+     * @return
+     */
     @RequestMapping("/getempsbyjson")
     //要返回Json数据，需引入jackson包
     @ResponseBody
@@ -37,8 +42,6 @@ public class EmployController {
         Msg msg = Msg.success().add("pageInfo",pageInfo);
         return msg;
     }
-
-
 
     /**
      * 查询所有数据，
