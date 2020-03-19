@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/bean/Msg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/dataajax.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emplist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emplist.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -256,8 +256,8 @@
       <item itemvalue="JUnit.TestContoller.test" />
       <item itemvalue="JUnit.TestContoller.testPage" />
       <item itemvalue="JUnit.TestMapper.testDepartmentMapper" />
-      <item itemvalue="Tomcat Server.ssm" />
       <item itemvalue="JUnit.TestContoller.testgetEmpsByJson" />
+      <item itemvalue="Tomcat Server.ssm" />
     </list>
     <recent_temporary>
       <list>
@@ -295,7 +295,8 @@
       <workItem from="1584522995935" duration="714000" />
       <workItem from="1584523753384" duration="443000" />
       <workItem from="1584524418835" duration="47000" />
-      <workItem from="1584524637452" duration="17050000" />
+      <workItem from="1584524637452" duration="17177000" />
+      <workItem from="1584590102465" duration="9794000" />
     </task>
     <servers />
   </component>

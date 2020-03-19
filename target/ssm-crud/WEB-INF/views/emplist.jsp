@@ -51,7 +51,7 @@
                         <th>电子邮箱</th>>
                         <th>部门名称</th>
                         <th>操作</th>
-                    <tr>
+                    </tr>
                     <c:forEach var="myemp" items="${pageInfo.list}">
                         <tr>
                             <td>${myemp.empId}</td>
