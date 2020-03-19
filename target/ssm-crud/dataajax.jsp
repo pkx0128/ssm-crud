@@ -53,8 +53,8 @@
         </div>
         <!--分页-->
         <div class="row">
-            <div class="col-md-6">当前为页，总页，总条记录</div>
-            <div class="col-md-6"></div>
+            <div class="col-md-6" id="pagemsg"></div>
+            <div class="col-md-6" id="page_nav"></div>
         </div>
     </div>
 
@@ -66,12 +66,18 @@
                 type:"GET",
                 success:function(data){
                    console.log(data);
+                   //显示表格数据
                    emp_table(data);
+                   //显示分页数据
+                    emp_pageMsg(data);
+                    //显示分页导航
+                    emp_pageMsg_nav(data);
                 }
 
             });
         });
 
+        //把ajax请求获取到的数据解释到页面显示
         function emp_table(data){
             var emps = data.extend.pageInfo.list;
            $.each(emps,function(index,item){
@@ -87,6 +93,31 @@
                $("<tr></tr>").append(empIdTD).append(empNameTD).append(genderTD).append(emailTD).append(departmentTD).append(btn).appendTo("#empTable tbody");
            });
         }
+
+        //分页信息
+        function emp_pageMsg(data){
+            var mypage = data.extend.pageInfo;
+            $("#pagemsg").append("当前为第"+mypage.pageNum+"页,总"+mypage.pages+"页,总"+mypage.total+"条记录");
+        }
+
+        //构建分布条
+        function emp_pageMsg_nav(data){
+            var nav = $("<nav></nav>").attr("aria-label","Page navigation");
+            var ul =$("<ul></ul>").addClass("pagination");
+            var firstLi = $("<li></li>").append($("<a></a>").attr("href","#").append("首页"));
+            var preLi  = $("<li></li>").append($("<a></a>").attr("href","#").attr("aria-label","Previous").append($("<span></span>").attr("aria-hidden","true").append("&laquo;")));
+            ul.append(firstLi).append(preLi);
+            $.each(data.extend.pageInfo.navigatepageNums,function (index,item) {
+                var pagenLi = $("<li></li>").append($("<a></a>").attr("href","#").append(item));
+                ul.append(pagenLi);
+            });
+
+            var nextLi  = $("<li></li>").append($("<a></a>").attr("href","#").attr("aria-label","Next").append($("<span></span>").attr("aria-hidden","true").append("&raquo;")));
+            var lastLi = $("<li></li>").append($("<a></a>").attr("href","#").append("尾页"));
+           ul.append(nextLi).append(lastLi);
+           nav.append(ul).appendTo("#page_nav");
+        }
+
     </script>
 </body>
 </html>
