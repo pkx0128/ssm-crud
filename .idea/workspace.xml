@@ -7,9 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beeb1dba-9ef6-4590-91dc-11540fa41e44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/DepartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/DepartmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatisconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatisconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatisconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dataajax.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dataajax.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-crud/dataajax.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/dataajax.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -300,7 +301,8 @@
       <workItem from="1584523753384" duration="443000" />
       <workItem from="1584524418835" duration="47000" />
       <workItem from="1584524637452" duration="17177000" />
-      <workItem from="1584590102465" duration="26584000" />
+      <workItem from="1584590102465" duration="27139000" />
+      <workItem from="1584673082548" duration="13345000" />
     </task>
     <servers />
   </component>

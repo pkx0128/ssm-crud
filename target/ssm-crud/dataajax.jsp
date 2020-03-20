@@ -13,12 +13,65 @@
 <head>
     <title>发送ajax请求获取数据</title>
     <!--引入jquery-->
-    <script type="text/javascript" src="static/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
     <!--引入bootstrap-->
     <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
     <script type="text/javascript" src="static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <!-- 新增员工信息模态框 -->
+    <div class="modal fade" id="addempModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">新增员工信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="empName" class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="empName" id="empName" placeholder="请输入你的姓名"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓别：</label>
+                            <div class="col-sm-4">
+<%--                                <input type="text" class="form-control" name="gender" id="gender"/>--%>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="gender1" value="M" checked>男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="gender2" value="F">女
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">email：</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="请输入email地址"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">部门：</label>
+                            <div class="col-sm-4">
+                                <select name="dId" id="department_select" class="form-control">
+<%--                                    <option>开发部</option>--%>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -29,8 +82,8 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-offset-10">
-                <button class="btn-sm btn-primary">新增</button>
-                <button class="btn-sm btn-danger">删除</button>
+                <button class="btn-sm btn-primary" id="add_emp_btn">新增</button>
+                <button class="btn-sm btn-danger" id="del_emp_btn">删除</button>
             </div>
         </div>
         <!--员工列表-->
@@ -177,6 +230,32 @@
             }
            //把nav添加到id为page_nav的div中
            nav.append(ul).appendTo("#page_nav");
+        }
+        //点击新增按钮打开模态框
+        $("#add_emp_btn").click(function(){
+            //打开模态框之前发送ajax请求获取部门信息
+            get_dept();
+            //点击新增按钮
+            $("#addempModel").modal({
+                backdrop:"static"
+            });
+        });
+        //发送ajax请求获取部门信息
+        function get_dept(){
+            $.ajax({
+                url:"${APP_PATH}/depts/getdepts",
+                type:"GET",
+                success:function(data){
+                    //清空结点信息
+                    $("#department_select").empty();
+                    //遍历部门信息
+                    $.each(data.extend.department,function(index,item){
+                        console.log(item);
+                        // var option = $("<option></option>").append(item.deptName);
+                        $("#department_select").append($("<option></option>").append(item.deptName).attr("value",item.deptId));
+                    })
+                }
+            });
         }
 
     </script>
