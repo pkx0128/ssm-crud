@@ -22,4 +22,13 @@ public class EmployeeService {
         return employeeMapper.selectByExampleWithDept(null);
     }
 
+    /**
+     * 保存员工数据到数据库
+     * @param employee
+     * @return
+     */
+    public int insertEmployee(Employee employee){
+        return employeeMapper.insertSelective(employee);
+    }
+
 }

@@ -18,6 +18,11 @@ public class DepartmentController {
     //注入DepartmentService对象
     @Autowired
     private DepartmentService departmentService;
+
+    /**
+     * 查询部门数据
+     * @return
+     */
     @RequestMapping("/getdepts")
     @ResponseBody
     public Msg getdepartment(){

@@ -9,10 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * 员工列表处理器
@@ -58,5 +61,22 @@ public class EmployController {
         //存入请求域
         model.addAttribute("pageInfo",pageInfo);
         return "emplist";
+    }
+
+    /**
+     * 保存数据到数据库
+     * 请求/emps的约定
+     * /emps/{param} GET 为查询数据
+     * /emps POST 保存数据
+     * /emps/{param} PUT 修改数据
+     * /emps/{param} DELETE 删除数据
+     * @param employee
+     * @return
+     */
+    @RequestMapping(value = "/emps",method = POST)
+    @ResponseBody
+    public Msg saveEmployee(Employee employee){
+        employeeService.insertEmployee(employee);
+        return Msg.success();
     }
 }

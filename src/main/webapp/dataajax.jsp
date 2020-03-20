@@ -28,7 +28,7 @@
                     <h4 class="modal-title" id="myModalLabel">新增员工信息</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="emp_form">
                         <div class="form-group">
                             <label for="empName" class="col-sm-2 control-label">姓名：</label>
                             <div class="col-sm-8">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">保存</button>
+                    <button type="button" class="btn btn-primary" id="submit_btn">保存</button>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                             <th>操作</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody id="emptbody"></tbody>
                 </table>
             </div>
         </div>
@@ -112,6 +112,8 @@
     </div>
 
     <script type="text/javascript">
+        //定义总记录数变量
+        var Maxpages;
         //页面加载完成就获取第一页数据
         $(function(){
            get_emps(1);
@@ -136,7 +138,7 @@
         //把ajax请求获取到的数据解释到页面显示
         function emp_table(data){
             //清空表格数据
-            $("#empTable tbody").empty();
+            $("#emptbody").empty();
             //获得服务器返回的员工信息
             var emps = data.extend.pageInfo.list;
             //遍历员工信息
@@ -169,6 +171,7 @@
             $("#pagemsg").empty();
             var mypage = data.extend.pageInfo;
             $("#pagemsg").append("当前为第"+mypage.pageNum+"页,总"+mypage.pages+"页,总"+mypage.total+"条记录");
+            Maxpages = mypage.total;
         }
 
         //构建分布条
@@ -192,7 +195,7 @@
                 get_emps(data.extend.pageInfo.pageNum - 1);
             });
             //如果为第1页则不显示首页和上一页导航
-            if(data.extend.pageInfo.hasPreviousPage && data.extend.pageInfo.isFirstPage==false){
+            if(data.extend.pageInfo.hasPreviousPage){
                 //把首页与上一页导航加入ul
                 ul.append(firstLi).append(preLi);
             }
@@ -224,7 +227,7 @@
                 get_emps(data.extend.pageInfo.pages);
             });
             //如果为最后一页，则不显示下一页与尾页导航
-            if(data.extend.pageInfo.hasNextPage && data.extend.pageInfo.isLastPage==false){
+            if(data.extend.pageInfo.hasNextPage){
                 // 把下一页导航li和尾页导航li加到ul
                 ul.append(nextLi).append(lastLi);
             }
@@ -240,7 +243,7 @@
                 backdrop:"static"
             });
         });
-        
+
         //发送ajax请求获取部门信息
         function get_dept(){
             $.ajax({
@@ -258,6 +261,21 @@
                 }
             });
         }
+
+        //提交form表单
+        $("#submit_btn").click(function(){
+            $.ajax({
+                url:"${APP_PATH}/emps/emps",
+                type:"POST",
+                data:$("#emp_form").serialize(),//序列化表单数据
+                success:function(rdata){
+                    //关闭模态框
+                    $("#addempModel").modal('hide');
+                    //跳到最后一页面，显示新增的数据，由于总记录数总是大于页数，如果要显示最后一页可传入总记录数作为页码变量
+                    get_emps(Maxpages);
+                }
+            });
+        });
 
     </script>
 </body>
