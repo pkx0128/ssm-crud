@@ -33,6 +33,7 @@
                             <label for="empName" class="col-sm-2 control-label">姓名：</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="empName" id="empName" placeholder="请输入你的姓名"/>
+                                <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -51,6 +52,7 @@
                             <label for="email" class="col-sm-2 control-label">email：</label>
                             <div class="col-sm-8">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="请输入email地址"/>
+                                <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -269,8 +271,10 @@
             var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,6}$)/
             //校验用户名
             if(!regName.test(empName)){
-                console.log("姓名不规范");
+                validata_show($("#empName"),"error","6到16位a到z和A到Z和数字的组合或者3到6位的中文字符");
                 return false;
+            }else{
+                validata_show($("#empName"),"success","");
             }
 
             //获取email
@@ -278,11 +282,26 @@
             var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
             //检验邮箱
             if(!regemail.test(email)){
-                console.log("邮箱不规范");
+                validata_show($("#email"),"error","邮箱地址错误");
                 return false;
+            }else{
+                validata_show($("#email"),"success","");
             }
             //校验通过
             return true;
+        }
+        //校验提示信息方法
+        function validata_show(ele,status,msg){
+            if(status == "success"){
+                ele.parent().removeClass("has-error").addClass("has-success");
+                ele.next("span").empty();
+
+            }else if(status == "error"){
+                ele.next("span").empty();
+                // console.log("邮箱不规范");
+                ele.parent().addClass("has-error");
+                ele.next("span").append(msg);
+            }
         }
 
         //提交form表单
