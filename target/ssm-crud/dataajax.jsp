@@ -261,20 +261,45 @@
                 }
             });
         }
+        //校验表单数据
+        function validata_form(){
+            //获取用户名
+            var empName = $("#empName").val();
+            //定义正则表达式，支持6到16位a到z和A到Z和数字的组合或者3到6位的中文字符
+            var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,6}$)/
+            //校验用户名
+            if(!regName.test(empName)){
+                console.log("姓名不规范");
+                return false;
+            }
+
+            //获取email
+            var email = $("#email").val();
+            var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+            if(!regemail.test(email)){
+                console.log("邮箱不规范");
+                return false;
+            }
+            return true;
+        }
 
         //提交form表单
         $("#submit_btn").click(function(){
-            $.ajax({
-                url:"${APP_PATH}/emps/emps",
-                type:"POST",
-                data:$("#emp_form").serialize(),//序列化表单数据
-                success:function(rdata){
-                    //关闭模态框
-                    $("#addempModel").modal('hide');
-                    //跳到最后一页面，显示新增的数据，由于总记录数总是大于页数，如果要显示最后一页可传入总记录数作为页码变量
-                    get_emps(Maxpages);
-                }
-            });
+            //执行数据校验方法
+            if(validata_form()){
+                $.ajax({
+                    url:"${APP_PATH}/emps/emps",
+                    type:"POST",
+                    data:$("#emp_form").serialize(),//序列化表单数据
+                    success:function(rdata){
+                        //关闭模态框
+                        $("#addempModel").modal('hide');
+                        //跳到最后一页面，显示新增的数据，由于总记录数总是大于页数，如果要显示最后一页可传入总记录数作为页码变量
+                        get_emps(Maxpages);
+                    }
+                });
+            }
+
         });
 
     </script>
