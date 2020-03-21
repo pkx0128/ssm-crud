@@ -79,4 +79,21 @@ public class EmployController {
         employeeService.insertEmployee(employee);
         return Msg.success();
     }
+
+    /**
+     * 根据姓名查询
+     * @param empName
+     * @return
+     */
+    @RequestMapping("/checkname")
+    @ResponseBody
+    public Msg checkname(@RequestParam("empName") String empName){
+        System.out.println("========"+employeeService.getByName(empName));
+//        //返回true表示姓名可用，返回false表示姓名重复,不可用
+        if(employeeService.getByName(empName)){
+            return Msg.success();
+        }else{
+            return Msg.fail();
+        }
+    }
 }

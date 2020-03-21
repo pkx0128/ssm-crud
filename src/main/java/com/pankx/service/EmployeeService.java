@@ -1,6 +1,7 @@
 package com.pankx.service;
 
 import com.pankx.bean.Employee;
+import com.pankx.bean.EmployeeExample;
 import com.pankx.dao.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,20 @@ public class EmployeeService {
      */
     public int insertEmployee(Employee employee){
         return employeeMapper.insertSelective(employee);
+    }
+
+    /**
+     * 根据名字查询
+     * @param empName
+     * @return返回true表示姓名可用，返回false表示姓名重复
+     */
+    public boolean getByName(String empName){
+        //创建EmployeeExample对象
+        EmployeeExample example = new EmployeeExample();
+        //设置条件
+        example.createCriteria().andEmpNameEqualTo(empName);
+        //返回true表示姓名可用，返回false表示姓名重复,不可用
+        return employeeMapper.countByExample(example) == 0;
     }
 
 }

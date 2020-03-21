@@ -238,6 +238,7 @@
         }
         //点击新增按钮打开模态框
         $("#add_emp_btn").click(function(){
+            $("#emp_form")[0].reset();
             //打开模态框之前发送ajax请求获取部门信息
             get_dept();
             //点击新增按钮
@@ -271,17 +272,9 @@
             var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,6}$)/
             //校验用户名
             if(!regName.test(empName)){
-                // $("#empName").next("span").empty();
-                // // console.log("姓名不规范");
-                // $("#empName").parent().addClass("has-error");
-                // $("#empName").next("span").append("6到16位a到z和A到Z和数字的组合或者3到6位的中文字符");
                 validata_show($("#empName"),"error","6到16位a到z和A到Z和数字的组合或者3到6位的中文字符");
                 return false;
             }else{
-                // console.log("姓名不规范");
-                // $("#empName").parent().removeClass("has-error").addClass("has-success");
-                // $("#empName").next("span").empty();
-                // return true;
                 validata_show($("#empName"),"success","");
             }
 
@@ -290,17 +283,9 @@
             var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
             //检验邮箱
             if(!regemail.test(email)){
-                // $("#email").next("span").empty();
-                // // console.log("邮箱不规范");
-                // $("#email").parent().addClass("has-error");
-                // $("#email").next("span").append("邮箱地址错误");
                 validata_show($("#email"),"error","邮箱地址错误");
                 return false;
             }else{
-                // console.log("邮箱不规范");
-                // $("#email").parent().removeClass("has-error").addClass("has-success");
-                // $("#email").next("span").empty();
-                // return true;
                 validata_show($("#email"),"success","");
             }
             //校验通过
@@ -311,7 +296,7 @@
             if(status == "success"){
                 ele.parent().removeClass("has-error").addClass("has-success");
                 ele.next("span").empty();
-
+                ele.next("span").append(msg);
             }else if(status == "error"){
                 ele.next("span").empty();
                 // console.log("邮箱不规范");
@@ -319,11 +304,35 @@
                 ele.next("span").append(msg);
             }
         }
-
+        //通过ajax检验姓名是否重复
+            $("#empName").change(function(){
+               $.ajax({
+                   url:"${APP_PATH}/emps/checkname",
+                   type:"GET",
+                   data:"empName="+$("#empName").val(),
+                   success:function(rel){
+                       console.log(rel);
+                       if(rel.code == 100 ){
+                           validata_show($("#empName"),"success","用户名可用");
+                           $("#submit_btn").attr("ajax_validata_name","success");
+                       }else if(rel.code == 200){
+                           validata_show($("#empName"),"error","姓名已存在，请换个重试！");
+                           $("#submit_btn").attr("ajax_validata_name","error");
+                       }
+                   }
+               });
+            });
         //提交form表单
         $("#submit_btn").click(function(){
             //执行数据校验方法
-            if(validata_form()){
+            if(!validata_form()){
+                return false;
+            }
+
+            if($("#submit_btn").attr("ajax_validata_name") == "error"){
+                return false;
+            }
+
                 $.ajax({
                     url:"${APP_PATH}/emps/emps",
                     type:"POST",
@@ -335,8 +344,6 @@
                         get_emps(Maxpages);
                     }
                 });
-            }
-
         });
 
     </script>

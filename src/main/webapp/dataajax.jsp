@@ -238,6 +238,7 @@
         }
         //点击新增按钮打开模态框
         $("#add_emp_btn").click(function(){
+            $("#emp_form")[0].reset();
             //打开模态框之前发送ajax请求获取部门信息
             get_dept();
             //点击新增按钮
@@ -295,7 +296,7 @@
             if(status == "success"){
                 ele.parent().removeClass("has-error").addClass("has-success");
                 ele.next("span").empty();
-
+                ele.next("span").append(msg);
             }else if(status == "error"){
                 ele.next("span").empty();
                 // console.log("邮箱不规范");
@@ -303,11 +304,35 @@
                 ele.next("span").append(msg);
             }
         }
-
+        //通过ajax检验姓名是否重复
+            $("#empName").change(function(){
+               $.ajax({
+                   url:"${APP_PATH}/emps/checkname",
+                   type:"GET",
+                   data:"empName="+$("#empName").val(),
+                   success:function(rel){
+                       console.log(rel);
+                       if(rel.code == 100 ){
+                           validata_show($("#empName"),"success","用户名可用");
+                           $("#submit_btn").attr("ajax_validata_name","success");
+                       }else if(rel.code == 200){
+                           validata_show($("#empName"),"error","姓名已存在，请换个重试！");
+                           $("#submit_btn").attr("ajax_validata_name","error");
+                       }
+                   }
+               });
+            });
         //提交form表单
         $("#submit_btn").click(function(){
             //执行数据校验方法
-            if(validata_form()){
+            if(!validata_form()){
+                return false;
+            }
+            //判断姓名校验是否成功
+            if($("#submit_btn").attr("ajax_validata_name") == "error"){
+                return false;
+            }
+                //发送ajax提交表单信息
                 $.ajax({
                     url:"${APP_PATH}/emps/emps",
                     type:"POST",
@@ -319,8 +344,6 @@
                         get_emps(Maxpages);
                     }
                 });
-            }
-
         });
 
     </script>
