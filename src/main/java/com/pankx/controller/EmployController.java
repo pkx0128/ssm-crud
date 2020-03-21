@@ -89,11 +89,16 @@ public class EmployController {
     @ResponseBody
     public Msg checkname(@RequestParam("empName") String empName){
         System.out.println("========"+employeeService.getByName(empName));
+        //校验员工姓名的正则，支持6到16位a到z和A到Z和数字的组合或者2到6位的中文字符
+        String regx = "(^[a-zA-Z0-9_-]{6,16}$)|(^[\\u2E80-\\u9FFF]{2,6}$)";
+        if(!empName.matches(regx)){
+            return Msg.fail().add("va_msg","员工姓名必须为6到16位大小写字母和数字的组合或者2到6位的中文字符");
+        }
 //        //返回true表示姓名可用，返回false表示姓名重复,不可用
         if(employeeService.getByName(empName)){
-            return Msg.success();
+            return Msg.success().add("va_msg","用户名可用");
         }else{
-            return Msg.fail();
+            return Msg.fail().add("va_msg","用户名不可用");
         }
     }
 }

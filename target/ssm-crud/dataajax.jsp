@@ -272,7 +272,7 @@
             var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,6}$)/
             //校验用户名
             if(!regName.test(empName)){
-                validata_show($("#empName"),"error","6到16位a到z和A到Z和数字的组合或者3到6位的中文字符");
+                validata_show($("#empName"),"error","6到16位a到z和A到Z和数字的组合或者2到6位的中文字符");
                 return false;
             }else{
                 validata_show($("#empName"),"success","");
@@ -311,13 +311,13 @@
                    type:"GET",
                    data:"empName="+$("#empName").val(),
                    success:function(rel){
-                       console.log(rel);
+                       console.log("rel====="+rel.extend.va_msg);
                        if(rel.code == 100 ){
-                           validata_show($("#empName"),"success","用户名可用");
-                           $("#submit_btn").attr("ajax_validata_name","success");
+                           validata_show($("#empName"),"success",rel.extend.va_msg);
+                           $("#submit_btn").attr("ajax_validata_name",rel.extend.va_msg);
                        }else if(rel.code == 200){
-                           validata_show($("#empName"),"error","姓名已存在，请换个重试！");
-                           $("#submit_btn").attr("ajax_validata_name","error");
+                           validata_show($("#empName"),"error",rel.extend.va_msg);
+                           $("#submit_btn").attr("ajax_validata_name",rel.extend.va_msg);
                        }
                    }
                });
@@ -328,11 +328,11 @@
             if(!validata_form()){
                 return false;
             }
-
+            //判断姓名校验是否成功
             if($("#submit_btn").attr("ajax_validata_name") == "error"){
                 return false;
             }
-
+                //发送ajax提交表单信息
                 $.ajax({
                     url:"${APP_PATH}/emps/emps",
                     type:"POST",
