@@ -238,10 +238,11 @@
         }
         //点击新增按钮打开模态框
         $("#add_emp_btn").click(function(){
+            //重置表单
             $("#emp_form")[0].reset();
             //打开模态框之前发送ajax请求获取部门信息
             get_dept();
-            //点击新增按钮
+            //点击新增按钮弹出模态框
             $("#addempModel").modal({
                 backdrop:"static"
             });
@@ -272,7 +273,7 @@
             var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,6}$)/
             //校验用户名
             if(!regName.test(empName)){
-                validata_show($("#empName"),"error","6到16位a到z和A到Z和数字的组合或者2到6位的中文字符");
+                validata_show($("#empName"),"error","必须为6到16位字母和数字的组合或者2到6位的中文字符");
                 return false;
             }else{
                 validata_show($("#empName"),"success","");
@@ -338,10 +339,22 @@
                     type:"POST",
                     data:$("#emp_form").serialize(),//序列化表单数据
                     success:function(rdata){
-                        //关闭模态框
-                        $("#addempModel").modal('hide');
-                        //跳到最后一页面，显示新增的数据，由于总记录数总是大于页数，如果要显示最后一页可传入总记录数作为页码变量
-                        get_emps(Maxpages);
+                        if(rdata.code == 100){
+                            //关闭模态框
+                            $("#addempModel").modal('hide');
+                            //跳到最后一页面，显示新增的数据，由于总记录数总是大于页数，如果要显示最后一页可传入总记录数作为页码变量
+                            get_emps(Maxpages);
+                        }else{
+                            console.log(rdata);
+                            if(undefined != rdata.extend.s_error.email){
+                                validata_show($("#email"),"error",rdata.extend.s_error.email);
+                            }
+                            if(undefined != rdata.extend.s_error.empName){
+                                validata_show($("#empName"),"error",rdata.extend.s_error.empName);
+                            }
+
+                        }
+
                     }
                 });
         });

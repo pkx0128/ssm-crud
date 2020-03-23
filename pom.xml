@@ -21,6 +21,14 @@
 
   <dependencies>
 
+<!--    添加JSR303依赖-->
+      <dependency>
+          <groupId>org.hibernate.validator</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>6.0.17.Final</version>
+      </dependency>
+
+
 <!--    返回json字符串的支持-->
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
     <dependency>

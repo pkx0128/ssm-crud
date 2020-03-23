@@ -8,12 +8,17 @@ import com.pankx.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -75,9 +80,25 @@ public class EmployController {
      */
     @RequestMapping(value = "/emps",method = POST)
     @ResponseBody
-    public Msg saveEmployee(Employee employee){
-        employeeService.insertEmployee(employee);
-        return Msg.success();
+    public Msg saveEmployee(@Valid Employee employee, BindingResult result){
+        //判断是否有错误信息
+        if(result.hasErrors()){
+            Map<String,Object> map = new HashMap<>();
+            //获取所有错误信息
+            List<FieldError> fieldErrors = result.getFieldErrors();
+            //遍历所有错误信息并添加到Map中
+            for(FieldError fieldError: fieldErrors){
+               map.put(fieldError.getField(),fieldError.getDefaultMessage());
+            }
+            //返回错误信息到客户端
+            return Msg.fail().add("s_error",map);
+        }else{
+            //保存数据到数据库
+            employeeService.insertEmployee(employee);
+            //返回成功信息给客户端
+            return Msg.success();
+        }
+
     }
 
     /**
