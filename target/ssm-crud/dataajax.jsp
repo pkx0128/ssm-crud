@@ -326,9 +326,9 @@
         //提交form表单
         $("#submit_btn").click(function(){
             //执行数据校验方法
-            // if(!validata_form()){
-            //     return false;
-            // }
+            if(!validata_form()){
+                return false;
+            }
             //判断姓名校验是否成功
             if($("#submit_btn").attr("ajax_validata_name") == "error"){
                 return false;
