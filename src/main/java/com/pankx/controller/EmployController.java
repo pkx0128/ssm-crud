@@ -17,8 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * 员工列表处理器
@@ -121,10 +120,29 @@ public class EmployController {
         }
     }
 
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/emps/{id}" ,method = GET)
     @ResponseBody
     public Msg getempbyid(@PathVariable Integer id){
         Employee employee = employeeService.getempById(id);
         return Msg.success().add("emp",employee);
     }
+
+    /**
+     * 更新
+     * @param employee
+     * @return
+     */
+    @RequestMapping(value = "/emps/{empId}",method = PUT)
+    @ResponseBody
+    public Msg updateemp(Employee employee){
+        employeeService.updateemp(employee);
+        return Msg.success();
+    }
+
+
 }

@@ -230,7 +230,8 @@
             //删除分页信息
             $("#pagemsg").empty();
             var mypage = data.extend.pageInfo;
-            $("#pagemsg").append("当前为第"+mypage.pageNum+"页,总"+mypage.pages+"页,总"+mypage.total+"条记录");
+            //添加curr_page属性用于后面修改员工信息时方便获取当前页
+            $("#pagemsg").append("当前为第"+mypage.pageNum+"页,总"+mypage.pages+"页,总"+mypage.total+"条记录").attr("curr_page",mypage.pageNum);
             Maxpages = mypage.total;
         }
 
@@ -336,16 +337,22 @@
             }else{
                 validata_show($("#empName"),"success","");
             }
-
+            //校验邮箱
+            checkemail("#email");
+            //校验通过
+            return true;
+        }
+        //校验邮箱地址
+        function checkemail(ele){
             //获取email
-            var email = $("#email").val();
+            var email = $(ele).val();
             var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
             //检验邮箱
             if(!regemail.test(email)){
-                validata_show($("#email"),"error","邮箱地址错误");
+                validata_show($(ele),"error","邮箱地址错误");
                 return false;
             }else{
-                validata_show($("#email"),"success","");
+                validata_show($(ele),"success","");
             }
             //校验通过
             return true;
@@ -431,7 +438,7 @@
                 backdrop:"statuc"
             });
             //查询要修改的员工信息显示到修改模态框
-            edit_get_emp_byId($("#edit_btn").attr("edit_empId"));
+            edit_get_emp_byId($(this).attr("edit_empId"));
 
         });
         //使用ajax请求要修改的员工信息显示到修改模态框
@@ -441,20 +448,38 @@
                 type:"GET",
                 success:function(rel){
                     console.log(rel);
+                    $("#edit_submit_btn").attr("update_empId",rel.extend.emp.empId);
                     $("#edit_empName").append(rel.extend.emp.empName);
-                    // if(rel.extend.emp.gender=="M"){
-                    //     $("#edit_gender2").removeAttr("checked");
-                    //     $("#edit_gender1").attr("checked","checked");
-                    // }else{
-                    //     $("#edit_gender1").removeAttr("checked");
-                    //     $("#edit_gender2").attr("checked","checked");
-                    // }
                     $("#edit_emp_form input[name=gender]").val([rel.extend.emp.gender]);
                     $("#edit_email").val(rel.extend.emp.email);
                     $("#edit_department_select").val([rel.extend.emp.dId]);
                 }
             });
         }
+
+        //点击更新按钮，发送ajax的PUT方式请求发送数据到服务器并保存到数据库
+        // PUT请求方式实现，有两种方式实现，
+        // 1、发送POST请求，再在data后带上_method=PUT，需配置spring的HiddenHttpMethodFilter过滤器
+        // 2、直接发送PUT请求，需配置spring的过滤器HttpPutFormContentFilter
+        $("#edit_submit_btn").click(function(){
+            //校验邮箱
+            checkemail("#edit_email");
+            // alert("edit");
+            //发送ajax
+            $.ajax({
+               url:"${APP_PATH}/emps/emps/"+$("#edit_submit_btn").attr("update_empId"),
+               type:"PUT",
+               data: $("#edit_emp_form").serialize(),
+               success:function(rel) {
+                //关闭模态框
+                   $("#edit_empModel").modal("hide");
+                    //alert(rel.code);
+                   //返回当前页
+                   get_emps($("#pagemsg").attr("curr_page"));
+
+               }
+            });
+        });
 
     </script>
 </body>

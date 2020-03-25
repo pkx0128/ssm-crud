@@ -55,4 +55,14 @@ public class EmployeeService {
         return employeeMapper.selectByPrimaryKeyWithDept(id);
     }
 
+    /**
+     * 根据id更新员工信息
+     * @param employee
+     * @return
+     */
+    public int updateemp(Employee employee){
+        System.out.println("updateemp====");
+        return employeeMapper.updateByPrimaryKeySelective(employee);
+    }
+
 }
