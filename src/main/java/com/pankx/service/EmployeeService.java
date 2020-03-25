@@ -65,4 +65,13 @@ public class EmployeeService {
         return employeeMapper.updateByPrimaryKeySelective(employee);
     }
 
+    /**
+     * 根据id删除员工信息
+     * @param id
+     * @return
+     */
+    public int delempbyid(Integer id){
+        return employeeMapper.deleteByPrimaryKey(id);
+    }
+
 }

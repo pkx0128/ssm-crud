@@ -144,5 +144,11 @@ public class EmployController {
         return Msg.success();
     }
 
+    @RequestMapping(value = "/emps/{id}",method = DELETE)
+    @ResponseBody
+    public Msg delempbyid(@PathVariable Integer id){
+        employeeService.delempbyid(id);
+        return Msg.success();
+    }
 
 }

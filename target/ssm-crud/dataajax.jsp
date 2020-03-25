@@ -217,7 +217,7 @@
                //构建编辑按钮
                var edibtn = $("<button></button>").attr("id","edit_btn").attr("edit_empId",item.empId).addClass("btn btn-primary btn-sm").append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
                //构建删除按钮
-               var delbtn = $("<button></button>").attr("id","del_btn").attr("del_empId",item.empId).addClass("btn btn-danger btn-sm").append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+               var delbtn = $("<button></button>").attr("id","del_btn").attr("del_empId",item.empId).attr("del_empName",item.empName).addClass("btn btn-danger btn-sm").append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
                //把编辑与删除按钮加到单元格
                var btn = $("<td></td>").attr("id","btn_td").append(edibtn).append(" ").append(delbtn);
                //构建表格行，并把员工相关信息单元格加到表格行内
@@ -476,9 +476,25 @@
                     //alert(rel.code);
                    //返回当前页
                    get_emps($("#pagemsg").attr("curr_page"));
-
                }
             });
+        });
+
+        //给删除按钮绑定单击事件
+        $(document).on("click","#del_btn",function(){
+            // alert($(this).attr("del_empId"));
+            //用户点击了确定按钮，发送ajax删除请求
+            if(confirm("确定要删除名字为："+$(this).attr("del_empName")+"的信息吗？")){
+                $.ajax({
+                    url:"${APP_PATH}/emps/emps/"+$(this).attr("del_empId"),
+                    type:"DELETE",
+                    success:function(rel){
+                        // alert(rel.code);
+                        //返回当前页
+                        get_emps($("#pagemsg").attr("curr_page"));
+                    }
+                });
+            }
         });
 
     </script>

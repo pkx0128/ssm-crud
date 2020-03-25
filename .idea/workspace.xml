@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/controller/EmployController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pankx/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dataajax.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dataajax.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-crud/dataajax.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/dataajax.jsp" afterDir="false" />
     </list>
@@ -310,7 +308,7 @@
       <workItem from="1584937149266" duration="9690000" />
       <workItem from="1585057538898" duration="163000" />
       <workItem from="1585059102868" duration="4843000" />
-      <workItem from="1585109684979" duration="21204000" />
+      <workItem from="1585109684979" duration="24321000" />
     </task>
     <servers />
   </component>
