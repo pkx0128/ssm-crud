@@ -10,16 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
@@ -121,5 +119,12 @@ public class EmployController {
         }else{
             return Msg.fail().add("va_msg","用户名不可用");
         }
+    }
+
+    @RequestMapping(value = "/emps/{id}" ,method = GET)
+    @ResponseBody
+    public Msg getempbyid(@PathVariable Integer id){
+        Employee employee = employeeService.getempById(id);
+        return Msg.success().add("emp",employee);
     }
 }

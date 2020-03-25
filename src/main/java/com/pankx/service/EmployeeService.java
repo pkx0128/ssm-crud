@@ -46,4 +46,13 @@ public class EmployeeService {
         return employeeMapper.countByExample(example) == 0;
     }
 
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    public Employee getempById(Integer id){
+        return employeeMapper.selectByPrimaryKeyWithDept(id);
+    }
+
 }
