@@ -74,4 +74,14 @@ public class EmployeeService {
         return employeeMapper.deleteByPrimaryKey(id);
     }
 
+    /**
+     * 批量删除
+     * @return
+     */
+    public int delemp(List<Integer> empid){
+        EmployeeExample example = new EmployeeExample();
+        example.createCriteria().andEmpIdIn(empid);
+       return employeeMapper.deleteByExample(example);
+    }
+
 }

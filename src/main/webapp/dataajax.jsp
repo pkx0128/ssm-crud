@@ -152,6 +152,7 @@
                 <table class="table table-hover" id="empTable">
                     <thead>
                         <tr>
+                            <th><input type="checkbox" id="check_all"/> </th>
                             <th>员工ID</th>
                             <th>员工姓名</th>
                             <th>员工姓别</th>
@@ -203,6 +204,8 @@
             var emps = data.extend.pageInfo.list;
             //遍历员工信息
            $.each(emps,function(index,item){
+               //复选框
+                var checkboxTD = $("<td></td>").append($("<input type='checkbox' class='check_emp'/>").attr("del_empId",item.empId).attr("del_empname",item.empName));
                //构建员工Id单元格
                var empIdTD = $("<td></td>").append(item.empId);
                //构建员工姓名单元格
@@ -221,7 +224,7 @@
                //把编辑与删除按钮加到单元格
                var btn = $("<td></td>").attr("id","btn_td").append(edibtn).append(" ").append(delbtn);
                //构建表格行，并把员工相关信息单元格加到表格行内
-               $("<tr></tr>").append(empIdTD).append(empNameTD).append(genderTD).append(emailTD).append(departmentTD).append(btn).appendTo("#empTable tbody");
+               $("<tr></tr>").append(checkboxTD).append(empIdTD).append(empNameTD).append(genderTD).append(emailTD).append(departmentTD).append(btn).appendTo("#empTable tbody");
            });
         }
 
@@ -496,6 +499,46 @@
                 });
             }
         });
+        //实现全选与全不选功能
+        $("#check_all").click(function(){
+            //设置全选与全不选
+            $(".check_emp").prop("checked",$("#check_all").prop("checked"));
+        });
+
+        //当当前页面员工信息全被选中时，全选复选框也要选中
+        $(document).on("click",".check_emp",function(){
+            $("#check_all").prop("checked",$(".check_emp:checked").length == $(".check_emp").length);
+        });
+
+        //点删除按钮删除选定的记录
+        $("#del_emp_btn").click(function(){
+            var del_name = "",del_id= "";
+            //遍历已经选定的记录
+            $.each($(".check_emp:checked"),function(){
+                //
+                del_name += $(this).attr("del_empname")+",";
+                del_id +=  $(this).attr("del_empid")+"-";
+                // console.log($(this).attr("del_empid")+"=>"+$(this).attr("del_empname"));
+            });
+                del_name = del_name.substr(0,del_name.length -1);
+                del_id = del_id.substr(0,del_id.length -1);
+                console.log(del_name);
+                console.log(del_id);
+                if(confirm("确定要删除员工："+del_name+"吗")){
+                    //发送ajax请求
+                    $.ajax({
+                        url:"${APP_PATH}/emps/emps/"+del_id,
+                        type:"DELETE",
+                        success:function(rel){
+                            // alert(rel.msg);
+                            get_emps($("#pagemsg").attr("curr_page"));
+                            $("#check_all").prop("checked",false);
+                        }
+                    });
+                }
+        });
+
+
 
     </script>
 </body>
